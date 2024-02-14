@@ -61,7 +61,7 @@ def add_score(player_name, score):
     # creates a file "scoreboard.txt" if the file is already created, open the file
     with open("scoreboard.txt", "a") as file:
         # store player's score to "scoreboard.txt"
-        file.write(f"{player_name} - {score}\n")
+        file.write(f"{player_name}:{score}\n")
 
 
 def sort_scores():
@@ -72,10 +72,11 @@ def sort_scores():
     # After seperating the name and score, we append it to scores list
     scores = []
     for individual_score in score_records:
-        name, score_str = individual_score.split(":")
-        # Convert score_str (string) to integer
-        score = int(score_str)
-        scores.append((name, score))
+        if ":" in individual_score:
+            name, score_str = individual_score.split(":")
+            # Convert score_str (string) to integer
+            score = int(score_str)
+            scores.append((name, score))
 
     # Sort the scores by descending order
     # https://developers.google.com/edu/python/sorting#:~:text=The%20easiest%20way%20to%20sort,original%20list%20is%20not%20changed.&text=It's%20most%20common%20to%20pass,any%20sort%20of%20iterable%20collection.
