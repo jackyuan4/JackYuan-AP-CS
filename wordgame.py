@@ -73,7 +73,7 @@ def sort_scores():
     scores = []
     for individual_score in score_records:
         if ":" in individual_score:
-            name, score_str = individual_score.split(":")
+            name, score_str = individual_score.split(":") #splits the name and score_str (string)
             # Convert score_str (string) to integer
             score = int(score_str)
             scores.append((name, score))
@@ -91,20 +91,20 @@ def sort_scores():
 # Displaying the scoreboard
 def display_scoreboard():
     # Load and sort scores
-    sorted_scores = sort_scores()
+    sorted_scores = sort_scores() #calls the sort_scores function
 
     # Display scoreboard
     print("Scoreboard for Livelaughlove:")
     # scoreboard prints player's placement, name, and score
     placement = 1
-    for player_name, score in sorted_scores:
+    for player_name, score in sorted_scores: #tuple contains name and their scores
         print(f"{placement}. {player_name}: {score}")
         placement += 1
 
 
 def play_game(word_length=None, category=None):
     def random_word(words):
-        return random.choice(words)
+        return random.choice(words) #https://www.youngwonks.com/blog/Random-Module-Python
 
     words = {
         "sports": ["baseball", "softball", "basketball", "football", "soccer"],
@@ -113,15 +113,17 @@ def play_game(word_length=None, category=None):
     }
 
     if category is None:
-        category = random.choice(["sports", "foods", "video_games"])
+        category = random.choice(["sports", "foods", "video_games"]) #if category is still none, chose a random choice
 
-    seleted_word = random_word(words[category])
-    guessed_letters = set()
-    guesses_left = len(seleted_word)
+    seleted_word = random_word(words[category]) #select random word
+    guessed_letters = set() #creates a emptry set to keep track of guessed letters
+    guesses_left = len(seleted_word) #one guess per letter of the word
 
     while guesses_left > 0:
-        current_state = "".join(
+        current_state = "".join( #turn into a single string
             letter if letter in guessed_letters else "#" for letter in seleted_word
+            #https://www.geeksforgeeks.org/ternary-operator-in-python/
+            #if letter is in guessed_letters, output is letter. if not, output is #
         )
         print(f"Current Word: {current_state}")
 
@@ -132,7 +134,9 @@ def play_game(word_length=None, category=None):
 
             if guess in seleted_word:
                 print(f"Good job! '{guess}' is in the word.")
-                if set(seleted_word).issubset(guessed_letters):
+                if set(seleted_word).issubset(guessed_letters): #https://www.w3schools.com/python/ref_set_issubset.asp
+                    #first convert seleted_word into a set
+                    #then check if the letters in the set are in the guessed_letters set
                     print(f"WWW! You guessed the word '{seleted_word}' correctly!")
                     player_name = input("Enter your name: ")
                     score = calculate_score(guesses_left, len(seleted_word))
@@ -158,8 +162,7 @@ def play_game(word_length=None, category=None):
                     if letter in seleted_word:
                         guessed_letters.add(letter)
                 current_state = "".join(
-                    letter if letter in guessed_letters else "#"
-                    for letter in seleted_word
+                    letter if letter in guessed_letters else "#" for letter in seleted_word
                 )
                 guesses_left -= 1
                 print(
