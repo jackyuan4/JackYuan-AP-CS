@@ -107,9 +107,13 @@ def play_game(word_length=None, category=None):
         return random.choice(words) #https://www.youngwonks.com/blog/Random-Module-Python
 
     words = {
-        "sports": ["baseball", "softball", "basketball", "football", "soccer"],
-        "foods": ["pizza", "burger", "taco", "salad", "donut", "steak", "sausages"],
-        "video_games": ["fortnite", "roblox", "apexlegend", "minecraft"],
+        "sports": ["baseball", "softball", "basketball", "football", "soccer", "boxing", "cycling", "archery", "badminton",
+                   "bowling", "boxing", "curling", "tennis", "skateboarding", "surfing", "hockey", "yoga", "deadlifting", "diving",
+                   "gliding", "equestrian"],
+        "foods": ["pizza", "burger", "taco", "salad", "donut", "steak", "sausages", "pie", "lobster", "noodles", "pancakes", "spaghetti"
+                  "toast", "yogurt", "cupcake", "cake", "kebab", "sandwich", "bread", "fish"],
+        "video_games": ["fortnite", "roblox", "apexlegend", "minecraft", "mario", "tetris", "portal", "pacman", "simcity", "doom",
+                        "pokemon", "metroid", "sonic", "brawlstars", "angrybirds", "zelda", "puzznic", "faefarm", "pikmin", "spiderman"],
     }
 
     if category is None:
