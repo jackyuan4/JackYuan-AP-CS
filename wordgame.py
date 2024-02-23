@@ -11,7 +11,19 @@
 
 # don't accept numbers
 # only accept letters
+from os import system, name
+from time import sleep
 import random
+
+def clear():
+    # for windows
+    if name == 'nt':
+        _ = system('cls')
+    # for mac and linux (here. os.name is 'posix')
+    else:
+        _ = system('clear')
+
+clear()
 
 scores = []  # list to store the user's scores
 
@@ -21,6 +33,7 @@ scores = []  # list to store the user's scores
 def play_game_random_category():
     categories = ["sports", "foods", "video_games"]
     category = random.choice(categories)
+    #add the function to play the game
     play_game(category)
 
 
@@ -102,7 +115,7 @@ def display_scoreboard():
         placement += 1
 
 
-def play_game(word_length=None, category=None):
+def play_game(category):
     def random_word(words):
         return random.choice(words) #https://www.youngwonks.com/blog/Random-Module-Python
 
@@ -115,9 +128,6 @@ def play_game(word_length=None, category=None):
         "video_games": ["fortnite", "roblox", "apexlegend", "minecraft", "mario", "tetris", "portal", "pacman", "simcity", "doom",
                         "pokemon", "metroid", "sonic", "brawlstars", "angrybirds", "zelda", "puzznic", "faefarm", "pikmin", "spiderman"],
     }
-
-    if category is None:
-        category = random.choice(["sports", "foods", "video_games"]) #if category is still none, chose a random choice
 
     seleted_word = random_word(words[category]) #select random word
     guessed_letters = set() #creates a emptry set to keep track of guessed letters
@@ -183,6 +193,8 @@ def main():
 
         if choice == "1":
             instructions()
+            sleep(10) #gives readers 10 seconds to read it
+            clear()
         elif choice == "2":
             play_game(category="sports")
         elif choice == "3":
@@ -193,6 +205,8 @@ def main():
             play_game_random_category()
         elif choice == "6":
             display_scoreboard()
+            sleep(10)
+            clear()
         elif choice == "7":
             break  # end the game
         else:
