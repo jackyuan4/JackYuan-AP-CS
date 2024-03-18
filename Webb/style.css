@@ -1,0 +1,147 @@
+body{
+  <! –– Source that taught me to make an image the background of the whole website -- >
+  <! –– https://blog.logrocket.com/css-full-page-background/#:~:text=The%20most%20basic%20way%20to,to%20use%20as%20the%20background.&text=This%20will%20set%20the%20body,will%20cover%20the%20entire%20webpage. -- >
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("webb.jpeg");
+  background-size: cover;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+}
+
+h1 a {
+  color: rgb(0, 183, 255);
+  text-decoration: none; 
+  background-color: white;
+  font-size:40px;
+  padding: 50px;
+
+
+}
+h2{
+  background-color: white;
+  font-size:30px;
+  color: rgb(0, 183, 255);
+}
+h3{
+  font-size:30px;
+  background-color: white;
+  color: black
+}
+
+.header {
+  background-color: black;
+  padding: 10px 0;
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+  margin: 80px;
+
+}
+.sports {
+  text-align: center;
+}
+.baseball {
+  display: inline-block;
+  text-align: center;
+}
+
+.crosscountry {
+  display: inline-block;
+  text-align: center;
+}
+
+
+.description a {
+  color: white;
+}
+
+.description{
+  max-width: 600px;
+  color: white;
+}
+
+.classes {
+  text-align: center;
+}
+
+.apcs {
+  display: inline-block;
+  text-align: center;
+}
+
+.spanish2 {
+  display: inline-block;
+  text-align: center;
+}
+
+
+.description a {
+  color: white;
+}
+
+.description{
+  max-width: 600px;
+  color: white;
+}
+
+
+.dorms {
+  text-align: center;
+}
+
+.holt {
+  display: inline-block;
+  text-align: center;
+}
+
+.mccloud {
+  display: inline-block;
+  text-align: center;
+}
+
+
+.description a {
+  color: white;
+}
+
+.description{
+  max-width: 600px;
+  color: white;
+}
+
+table {
+  margin-left: auto; /* https://www.w3schools.com/howto/howto_css_table_center.asp */
+  margin-right: auto;
+}
+
+td, th {
+  color: white;
+}
+
+
+form {
+  padding-top: 40px; /* https://www.w3schools.com/cssref/pr_padding-top.php */
+  padding-bottom: 40px;
+}
+
+.list {
+  color: white;
+  text-align: center;
+}
+
+ol { /* https://forum.freecodecamp.org/t/center-an-unordered-list/102904 */
+  text-align: center;
+  list-style: decimal inside;
+}
+
+ul {
+  text-align: center;
+  list-style: inside;
+}
